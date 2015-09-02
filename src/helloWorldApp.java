@@ -7,6 +7,6 @@ public class helloWorldApp {
      */
     public static void main(String[] args) {
         System.out.println("Hello World!"); //Display the String.
-
+        System.out.println("Hola Mundo!");
     }
 }
