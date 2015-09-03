@@ -1,4 +1,5 @@
 /**
+ * Basic starting out program to display general usage of Java.
  * Created by acrandall on 9/2/2015.
  */
 public class helloWorldApp {
