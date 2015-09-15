@@ -4,12 +4,16 @@
  */
 public class VariableNamingConventions {
     int intVariable;
+    char awesome_Char_Of_Awesomeness;
     String myString = "My String Rocks";
+    double $_tecnicallyValid;
+    byte prefferedDeclarationByte;
+    boolean boolFalse = false;
 
     public static void main(String[] args) {
         VariableNamingConventions vnc = new VariableNamingConventions();
         System.out.println("myString = " + vnc.myString + "\n" + "intVariable = " + vnc.intVariable);
-        String myLocalString = "";
+        String myLocalString ="";
         System.out.println("myLocalString = " + myLocalString);
 
         int result = 1 + 2;
