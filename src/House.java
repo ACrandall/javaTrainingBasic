@@ -4,6 +4,7 @@
 public class House {
     String color = "red";
     int address = 1234;
+    Door[] myDoor = new Door[4];
 
     public House(){}
 
@@ -25,6 +26,12 @@ public class House {
         address = myAddress;
     }
 
+    public House(String myColor, int myAddress, Door[] myDoors){
+        color = myColor;
+        address = myAddress;
+        myDoor = myDoors.clone();
+    }
+
     public String toString(){
         return "Address = " + address + "\n Color = " + color;
     }
@@ -42,5 +49,10 @@ public class House {
         System.out.println(bHouse);
         System.out.println(cHouse);
         System.out.println(dHouse);
+
+        dHouse.myDoor[0] = new Door();
+        dHouse.myDoor[1] = new Door(4,7);
+
+        System.out.println(dHouse.myDoor[0].myDoorknob.material);
     }
 }
