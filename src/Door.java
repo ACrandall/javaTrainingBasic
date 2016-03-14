@@ -28,8 +28,16 @@ public class Door {
         this.material = material;
     }
 
+    public Door(Door aDoor) {
+        height = aDoor.height;
+        width = aDoor.width;
+        area = aDoor.area;
+        material = aDoor.material;
+        myDoorknob = new Doorknob(aDoor.myDoorknob);
+    }
+
     public static void main(String[] args) {
-//        Door myDoor = new Door(7,4,"Steel");
+//        Door doors = new Door(7,4,"Steel");
         Door myDoor = new Door();
 
         System.out.println(myDoor.height);

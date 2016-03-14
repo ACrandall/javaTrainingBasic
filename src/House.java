@@ -1,48 +1,35 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by acrandall on 2/8/2016.
  */
 public class House {
-    String color = "red";
-    int address = 1234;
-    Door[] myDoor = new Door[4];
+    String color;
+    int address = 1234_5678_91;
+    List<Door> doors = new ArrayList<>();
 
-    public House(){}
+    public House(String myColor, int myAddress) {
 
-    public House(int myAddress){
-        this.address = myAddress;
-    }
-
-    public House(String myColor){
-        this.color = myColor;
-    }
-
-    public House(int myAddress,String myColor){
-        this.address = myAddress;
-        this.color = myColor;
-    }
-
-    public House(String myColor, int myAddress){
         color = myColor;
         address = myAddress;
     }
 
-    public House(String myColor, int myAddress, Door[] myDoors){
+    public House(String myColor, int myAddress, List<Door> myDoors) {
         color = myColor;
         address = myAddress;
-        myDoor = myDoors.clone();
-    }
-
-    public String toString(){
-        return "Address = " + address + "\n Color = " + color;
+        for (Door aDoor : myDoors) {
+            myDoors.add(new Door(aDoor));
+        }
     }
 
     public static void main(String[] args) {
         House aHouse;
-        aHouse = new House();
-        House bHouse = new House(1234);
-        House cHouse = new House("Red");
+        aHouse = new House("Red", 1234);
+        House bHouse = new House("Blue", 1234);
+        House cHouse = new House("Red", 2335);
         cHouse.address = 3456;
-        House dHouse = new House(2345,"Blue");
+        House dHouse = new House("Blue", 2345);
 
         System.out.println("aHouse's Color is " + aHouse.color);
         System.out.println("aHouse's Address is " + aHouse.address);
@@ -50,9 +37,23 @@ public class House {
         System.out.println(cHouse);
         System.out.println(dHouse);
 
-        dHouse.myDoor[0] = new Door();
-        dHouse.myDoor[1] = new Door(4,7);
+        List<Door> theseDoors = new ArrayList<>();
+        theseDoors.add(new Door());
+        theseDoors.add(new Door(4, 7));
+        dHouse.doors = theseDoors;
 
-        System.out.println(dHouse.myDoor[0].myDoorknob.material);
+        System.out.println(dHouse.doors.get(1).myDoorknob.material);
+    }
+
+    public List<Door> getDoors() {
+        return doors;
+    }
+
+    private void setDoors(List<Door> doors) {
+        this.doors = doors;
+    }
+
+    public String toString() {
+        return "Address = " + address + "\n Color = " + color;
     }
 }

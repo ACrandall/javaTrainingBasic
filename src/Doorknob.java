@@ -10,7 +10,7 @@ public class Doorknob {//class
         material = "Glass";
     }
 
-    public Doorknob(double radius, String material){//constructor or parameterized constructor
+    public Doorknob(double radius, String material){ //constructor or parameterized constructor
         this.radius = radius;
         this.material = material;
     }
@@ -18,5 +18,13 @@ public class Doorknob {//class
     public Doorknob(Doorknob myDoorKnob){//copy constructor
         this.radius = myDoorKnob.radius; //this Doorknobs radius is the same as myDoorknobs radius
         this.material = myDoorKnob.material; //this Doorknobs material is the same as myDoorknobs material
+    }
+
+    @Override
+    public String toString() {
+        return "Doorknob{" +
+                "radius=" + radius +
+                ", material='" + material + '\'' +
+                '}';
     }
 }
